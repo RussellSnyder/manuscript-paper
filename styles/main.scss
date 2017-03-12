@@ -29,3 +29,19 @@
     display: none;
   }
 }
+
+body {
+  margin: 0 !important;
+}
+
+@media print {
+  body {
+    margin: 0 !important;
+  }
+  .settings-container {
+    display: none;
+  }
+  .manuscript-paper-app {
+    overflow: hidden;
+  }
+}

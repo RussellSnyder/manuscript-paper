@@ -15,28 +15,28 @@ let formattedDate = `${mm}/${dd}/${yyyy}`
 let initialState = {
     metaData: {
         title: 'Manuscript Paper v1',
-        footer: 'Irini Is Beautiful',
+        footer: 'For Irini',
         createdAt: formattedDate,
     },
     settings: {
         paperSettings: {
           width: 210, // mm
-          height: 297 // mm
+          height: 278 // mm
         },
         stavesSettings: {
-            numStaves: 10,
-            marginX: 5, // mm
-            marginY: 10 // mm
+            numStaves: 6,
+            marginX: 0, // mm
+            marginY: -4 // mm
         },
         staffSettings: {
             staffType: 'piano',
-            staffLineThickness: 0.4, // mm
+            staffLineThickness: 0.5, // mm
             staffLineColor: '#aaa',
-            staffLineSpacing: 2.0, // mm
-            staffSpacing: 6, // mm
-            clefColor: 'black',
-            clefThickness: 1.3, //mm,
-            spaceBetweenGrandStaff: -2 //
+            staffLineSpacing: 2.2, // mm
+            staffSpacing: 1, // mm
+            clefColor: '#6699CC',
+            clefThickness: 1.5, //mm,
+            spaceBetweenGrandStaff: -5 //
         }
     }
 }

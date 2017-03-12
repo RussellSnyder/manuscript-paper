@@ -49,7 +49,7 @@ function generateBlankLine(staffSettingsObject, index, offset = 0) {
     return (
         <StaffLine strokeWidth={staffLineThickness + 'mm'} key={'blank-staffLine-' + index}
                                 y={index * staffLineSpacing + staffLineThickness + offset + 'mm'}
-                                color={'transparent'} className={`blank-staffline-${index}`} />)
+                                stroke={'transparent'} className={`blank-staffline-${index}`} />)
 
 }
 
