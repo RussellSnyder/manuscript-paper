@@ -25,18 +25,18 @@ let initialState = {
         },
         stavesSettings: {
             numStaves: 10,
-            marginX: 15, // mm
+            marginX: 5, // mm
             marginY: 10 // mm
         },
         staffSettings: {
             staffType: 'piano',
             staffLineThickness: 0.4, // mm
             staffLineColor: '#aaa',
-            staffLineSpacing: 4.0, // mm
-            staffSpacing: 3, // mm
+            staffLineSpacing: 2.0, // mm
+            staffSpacing: 6, // mm
             clefColor: 'black',
             clefThickness: 1.3, //mm,
-            spaceBetweenGrandStaff: 2 //
+            spaceBetweenGrandStaff: -2 //
         }
     }
 }

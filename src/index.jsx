@@ -1,18 +1,35 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+import {EventEmitter} from 'fbemitter';
+import {render} from 'react-dom';
 import App from './app.jsx';
 
-render( <AppContainer><App/></AppContainer>, document.querySelector("#app"));
+import {initialState} from './static/initialState.js';
 
-if (module && module.hot) {
-  module.hot.accept('./app.jsx', () => {
-    const App = require('./app.jsx').default;
+const emitter = new EventEmitter();
+
+
+let applicationState = initialState
+
+function update() {
     render(
-      <AppContainer>
-        <App/>
-      </AppContainer>,
-      document.querySelector("#app")
+        <App applicationState={applicationState} emitter={emitter} />,
+        document.querySelector("#app")
     );
-  });
 }
+
+update();
+
+emitter
+    .addListener('updateSetting', (value, name, location, location2) => {
+        if (!isNaN(value)) {
+            value = parseFloat(value)
+        }
+
+        if (location2) {
+            applicationState[location][location2][name] = value
+        } else {
+            applicationState[location][name] = value
+        }
+        console.log(applicationState)
+        update();
+    })

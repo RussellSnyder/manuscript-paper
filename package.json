@@ -17,6 +17,9 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "emitter": "0.0.5",
+    "fbemitter": "^2.1.1",
     "node-sass": "^4.3.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",

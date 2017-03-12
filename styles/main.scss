@@ -9,3 +9,23 @@
 	color: #ccc;
 	font-style: italic;
 }
+
+.settings-container {
+  background: #fff;
+  position: absolute;
+  right: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  min-width: 300px;
+}
+
+.setting-title {
+  &:hover {
+    cursor: pointer
+  }
+}
+.setting-group {
+  &.hidden {
+    display: none;
+  }
+}
