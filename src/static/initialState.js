@@ -14,7 +14,7 @@ let formattedDate = `${mm}/${dd}/${yyyy}`
 
 let initialState = {
     metaData: {
-        title: 'Manuscript Paper v1',
+        title: 'Manuscript Paper v2',
         footer: 'For Irini',
         createdAt: formattedDate,
     },

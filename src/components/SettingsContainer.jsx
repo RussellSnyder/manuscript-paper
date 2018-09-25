@@ -50,7 +50,7 @@ export default class SettingsContainer extends React.Component {
                     {this.makeSettingGroup('meta-data', 'Meta Data', 'showMetaData',
                         applicationState.metaData, 'metaData')}
                     {this.makeSelectGroup('staff-type', 'Staff Type', 'showStaffTypes',
-                        staffTypes)}
+                        staffTypes, 'settings', 'staffSettings')}
                     {this.makeSettingGroup('paper', 'Paper', 'showPaper',
                         applicationState.settings.paperSettings, 'settings', 'paperSettings')}
                     {this.makeSettingGroup('staves', 'Staves', 'showStaves',
@@ -93,10 +93,10 @@ export default class SettingsContainer extends React.Component {
         )
     }
 
-    makeSelectGroup(className, title, stateBinding, selectOptions) {
-        let options = Object.keys(selectOptions).map(item => {
+    makeSelectGroup(className, title, stateBinding, data, locationOnGlobalState, locationOnGlobalStateLvl2) {
+        let options = Object.keys(data).map(item => {
             return (
-                <option key={item} value={selectOptions[item]}>
+                <option key={item} value={data[item]}>
                     {item}
                 </option>
             )
@@ -108,7 +108,7 @@ export default class SettingsContainer extends React.Component {
                     {title} <i className={"fa fa-chevron-" + (this.state[stateBinding] ? 'up' : 'down')}/>
                 </h4>
                 <div className={"settings " + className + (!this.state[stateBinding] ? ' hidden' : '')}>
-                    <select name='staff-type'>
+                    <select name='staff-type' onChange={(e) => this.updateSetting(e, 'staffType', locationOnGlobalState, locationOnGlobalStateLvl2)}>
                         {options}
                     </select>
                 </div>
@@ -116,6 +116,9 @@ export default class SettingsContainer extends React.Component {
         )
     }
 
+    test() {
+        console.log('yo');
+    }
     updateSetting(e, item, locationOnGlobalState, locationOnGlobalStateLvl2) {
         let newValue = e.target.value
         console.log(newValue, item, locationOnGlobalState,locationOnGlobalStateLvl2)
